@@ -32,7 +32,7 @@ spec:
     - type: PatchSet
       patchSetName: region
     - type: ToCompositeFieldPath
-      fromFieldPath: status.id
+      fromFieldPath: metadata.annotations[crossplane.io/external-name]
       toFieldPath: status.resourceGroup
   - name: virtual-network
     base:
@@ -56,12 +56,8 @@ spec:
         string:
           fmt: "%s-vnet"
     - type: ToCompositeFieldPath
-      fromFieldPath: spec.parameters.id
+      fromFieldPath: metadata.annotations[crossplane.io/external-name]
       toFieldPath: status.vnet
-      transforms:
-      - type: string
-        string:
-          fmt: "%s-vnet"
   - name: subnet
     base:
       apiVersion: network.azure.upbound.io/v1beta1
@@ -84,5 +80,5 @@ spec:
         string:
           fmt: "%s-sn"
     - type: ToCompositeFieldPath
-      fromFieldPath: status.id
+      fromFieldPath: metadata.annotations[crossplane.io/external-name]
       toFieldPath: status.subnet

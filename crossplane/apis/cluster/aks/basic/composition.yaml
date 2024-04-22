@@ -1,37 +1,46 @@
 apiVersion: apiextensions.crossplane.io/v1
 kind: Composition
 metadata:
-  name: dxeksclusters.backstack.dev
+  name: xaksclusters.backstack.dev
   labels:
-    provider: aws
-    type: delab
+    provider: azure
+    type: basic
 spec:
   writeConnectionSecretsToNamespace: crossplane-system
   publishConnectionDetailsWithStoreConfigRef:
     name: vault
   compositeTypeRef:
     apiVersion: backstack.dev/v1alpha1
-    kind: DXEKSCluster
+    kind: XAKSCluster
   resources:
-    - base:
-        apiVersion: aws.caas.upbound.io/v1alpha1
-        kind: XEKS
-      connectionDetails:
-        - fromConnectionSecretKey: kubeconfig
-      name: compositeClusterEKS
+    - name: network
+      base:
+        apiVersion: azure.backstack.dev/v1alpha1
+        kind: XNetwork
       patches:
         - fromFieldPath: spec.parameters.id
           toFieldPath: spec.parameters.id
         - fromFieldPath: spec.parameters.region
           toFieldPath: spec.parameters.region
+        - fromFieldPath: spec.parameters.networkSelector
+          toFieldPath: spec.compositionSelector.matchLabels[type]
+    - name: cluster
+      base:
+        apiVersion: azure.backstack.dev/v1alpha1
+        kind: XAKS
+      connectionDetails:
+        - fromConnectionSecretKey: kubeconfig
+      patches:
         - fromFieldPath: spec.parameters.id
-          toFieldPath: metadata.annotations[crossplane.io/external-name]
+          toFieldPath: spec.parameters.id
+        - fromFieldPath: spec.parameters.region
+          toFieldPath: spec.parameters.region
         - fromFieldPath: metadata.uid
           toFieldPath: spec.writeConnectionSecretToRef.name
           transforms:
             - type: string
               string:
-                fmt: "%s-eks"
+                fmt: "%s-aks"
         - fromFieldPath: spec.writeConnectionSecretToRef.namespace
           toFieldPath: spec.writeConnectionSecretToRef.namespace
         - fromFieldPath: spec.parameters.version
@@ -40,9 +49,3 @@ spec:
           toFieldPath: spec.parameters.nodes.count
         - fromFieldPath: spec.parameters.nodes.instanceType
           toFieldPath: spec.parameters.nodes.instanceType
-        - fromFieldPath: spec.parameters.iam.roleArn
-          toFieldPath: spec.parameters.iam.roleArn
-        - fromFieldPath: spec.parameters.subnets
-          toFieldPath: spec.parameters.subnetIds
-          policy:
-            fromFieldPath: Required

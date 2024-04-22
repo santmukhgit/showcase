@@ -2,8 +2,8 @@ apiVersion: scaffolder.backstage.io/v1beta3
 kind: Template
 metadata:
   name: daks
-  title: New Cluster (AKS) in DE Lab
-  description: Request an AKS Cluster to host workloads in DE Lab
+  title: New Cluster (AKS) in Private Cloud (Lab)
+  description: Request an AKS Cluster to host workloads in Private Cloud (DE Lab)
   tags:
     - caas
     - aks
@@ -17,6 +17,8 @@ spec:
         - cluster_id
         - region
         - resource_group
+        - vnet
+        - subnet
       properties:
         cluster_id:
           title: Cluster ID
@@ -30,6 +32,14 @@ spec:
           title: Resource Group
           type: string
           description: Resource Group is the region you'd like your resource to be created in.
+        network_type:
+          title: Network Type
+          type: string
+          description: The type of network detault or existing subnets.
+          default: "delab"
+          enum: 
+            - "basic"
+            - "delab"
         vnet:
           title: VNet
           type: string

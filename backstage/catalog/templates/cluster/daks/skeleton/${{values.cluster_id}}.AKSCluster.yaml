@@ -7,7 +7,8 @@ spec:
   parameters:
     id: ${{ values.cluster_id }}
     region: ${{ values.region }}
-    networkSelector: delab
+    networkSelector: ${{ values.network_type }}
+    spec.compositionSelector.matchLabels[type]: ${{ values.network_type }}
     resourceGroup: ${{ values.resource_group }}
     vnet: ${{ values.vnet }}
     subnet: ${{ values.subnet }}
