@@ -146,5 +146,6 @@ jobs:
 
       - name: Publish Porter bundle
         run: |
-          porter publish --dir bundle --registry ${{ env.REGISTRY }}/${{ github.repository_owner }}
+          porter bundle cache clear
+          porter publish --dir bundle --registry ${{ env.REGISTRY }}/${{ github.repository_owner }} --force
           porter publish --dir bundle --registry ${{ env.REGISTRY }}/${{ github.repository_owner }} --tag latest --force
