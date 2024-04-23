@@ -34,7 +34,7 @@ deploy_backstack_hub() {
             host: ${BACKSTAGE_HOST}
             image:
               registry: ghcr.io
-              repository: kroy76/showcase-backstage
+              repository: santmukhgit/showcase-backstage
               tag: latest
               pullPolicy: Always
           argocd:
@@ -58,7 +58,7 @@ deploy_secrets() {
       type: git
       url: ${REPOSITORY}
       password: ${GITHUB_TOKEN}
-      username: kroy76
+      username: santmukhgit
 EOF
 
   ensure_namespace backstage
