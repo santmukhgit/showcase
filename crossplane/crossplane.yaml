@@ -7,7 +7,7 @@ metadata:
     meta.crossplane.io/source: github.com/back-stack
     meta.crossplane.io/license: Apache-2.0
     meta.crossplane.io/description: |
-      This configuration provides apis for the BACK stack
+      This configuration provides apis for the BACK stack #comments
 spec:
   crossplane:
     version: ">=v1.14.0-0"
