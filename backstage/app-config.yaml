@@ -64,7 +64,16 @@ techdocs:
 
 auth:
   # see https://backstage.io/docs/auth/ to learn about auth providers
-  providers: {}
+  environment:
+    name: development
+    providers:
+      oauth2:
+        development:
+          clientId: 5dknain9lvd5806l7f8v3kftpv
+          clientSecret: gb6dat5ndjot4nmr5mjqs9eitfktshq2ng4fdditoirqqsgf8g8
+          authorizationUrl: https://ltim-de-user-pool.auth.us-east-1.amazoncognito.com/oauth2/authorize?client_id=5dknain9lvd5806l7f8v3kftpv&response_type=code&scope=email+openid+phone+profile&redirect_uri=http%3A%2F%2Flocalhost%3A3000
+          tokenUrl: https://ltim-de-user-pool.auth.us-east-1.amazoncognito.com/oauth2/token
+          callbackUrl: http://backstage.backs.de.ltim.net
 
 scaffolder:
   # see https://backstage.io/docs/features/software-templates/configuration for software template options
