@@ -8,7 +8,7 @@ import {
 } from '@backstage/plugin-catalog';
 import {
   CatalogImportPage,
-  catalogImportPlugin,
+  catalogImportPlugin,=
 } from '@backstage/plugin-catalog-import';
 import { scaffolderPlugin } from '@backstage/plugin-scaffolder';
 import { NextScaffolderPage } from '@backstage/plugin-scaffolder/alpha'
