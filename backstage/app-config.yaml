@@ -73,7 +73,7 @@ auth:
           clientSecret: gb6dat5ndjot4nmr5mjqs9eitfktshq2ng4fdditoirqqsgf8g8
           authorizationUrl: https://ltim-de-user-pool.auth.us-east-1.amazoncognito.com/oauth2/authorize?client_id=5dknain9lvd5806l7f8v3kftpv&response_type=code&scope=email+openid+phone+profile&redirect_uri=http%3A%2F%2Flocalhost%3A3000
           tokenUrl: https://ltim-de-user-pool.auth.us-east-1.amazoncognito.com/oauth2/token
-          callbackUrl: https://backstage.backstack.de.ltim.net # Link of KRC Backstage workspace
+          callbackUrl: https://backstage.backs.de.ltim.net # Link of My Backstage workspace
 
 scaffolder:
   # see https://backstage.io/docs/features/software-templates/configuration for software template options
