@@ -1,4 +1,8 @@
 import React from 'react';
+import {
+  isHarnessCiCdAvailable,
+  EntityHarnessCiCdContent,
+} from '@harnessio/backstage-plugin-ci-cd';
 import { Button, Grid } from '@material-ui/core';
 import {
   EntityApiDefinitionCard,
@@ -77,7 +81,9 @@ const cicdContent = (
       <EntityGithubActionsContent />
     </EntitySwitch.Case>
 
-    <EntitySwitch.Case>
+  <EntitySwitch.Case>
+     <EntitySwitch.Case if={isHarnessCiCdAvailable}>
+    	<EntityHarnessCiCdContent />
       <EmptyState
         title="No CI/CD available for this entity"
         missing="info"
