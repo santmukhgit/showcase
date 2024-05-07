@@ -6,7 +6,7 @@ metadata:
   # Example for optional annotations
   annotations:
    #  github.com/project-slug: backstage/backstage
-    # backstage.io/techdocs-ref: dir:.
+   # backstage.io/techdocs-ref: dir:.
       harness.io/pipelines: |
         Pipeline1: https://app.harness.io/ng/account/-Sey-zxTQR-W6TCw2Ud0Kw/all/orgs/default/projects/default_project/pipelines/gamingapplication/pipeline-studio?storeType=INLINE
   links:
