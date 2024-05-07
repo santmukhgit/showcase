@@ -80,11 +80,11 @@ const cicdContent = (
     <EntitySwitch.Case if={isGithubActionsAvailable}>
       <EntityGithubActionsContent />
     </EntitySwitch.Case>
-//Added for Harness
+  //Added for Harness
     <EntitySwitch.Case if={isHarnessCiCdAvailable}>
-    <EntityHarnessCiCdContent />
-  </EntitySwitch.Case>    
-  <EntitySwitch.Case>
+      <EntityHarnessCiCdContent />
+    </EntitySwitch.Case>    
+    <EntitySwitch.Case>
       <EmptyState
         title="No CI/CD available for this entity"
         missing="info"
