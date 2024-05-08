@@ -97,7 +97,6 @@ const routes = (
     <Route path="/catalog-graph" element={<CatalogGraphPage />} />
   </FlatRoutes>
 );
-export { HarnessPlugin };
 export default app.createRoot(
   <>
     <AlertDisplay />
