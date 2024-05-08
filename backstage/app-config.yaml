@@ -3,7 +3,7 @@ app:
   baseUrl: http://localhost:3000
 
 organization:
-  name: The BACK Stack
+  name: My Company
 
 backend:
   # Used for enabling authentication, secret is shared by all backend plugins
@@ -28,8 +28,14 @@ backend:
   # This is for local development only, it is not recommended to use this in production
   # The production database configuration is stored in app-config.production.yaml
   database:
-    client: better-sqlite3
-    connection: ':memory:'
+    #client: better-sqlite3
+    #connection: ':memory:'
+    client: pg
+    connection:
+      host: 127.0.0.1
+      port: 5432
+      user: postgres
+      password: 'secret'
   # workingDirectory: /tmp # Use this to configure a working directory for the scaffolder, defaults to the OS temp-dir
 
 integrations:
@@ -37,7 +43,7 @@ integrations:
     - host: github.com
       # This is a Personal Access Token or PAT from GitHub. You can find out how to generate this token, and more information
       # about setting up the GitHub integration here: https://backstage.io/docs/getting-started/configuration#setting-up-a-github-integration
-      token: ${GITHUB_TOKEN}
+      token: ${GIT_TOKEN} #Add git token in environment variable
     ### Example for how to add your GitHub Enterprise instance using the API:
     # - host: ghe.example.net
     #   apiBaseUrl: https://ghe.example.net/api/v3
@@ -50,12 +56,11 @@ proxy:
   #   '/test':
   #     target: 'https://example.com'
   #     changeOrigin: true
-  # For Harness Integration
   '/harness/prod':
     target: 'https://app.harness.io/'
     headers:
-      'x-api-key': pat.-Sey-zxTQR-W6TCw2Ud0Kw.6639cdc69c1cc14edf9bae9b.CoydNCsjdV3XaFtJxNDL
-      
+      'x-api-key': pat.-Sey-zxTQR-W6TCw2Ud0Kw.663908fa9c1cc14edf998d08.PBHdJucBK6LMNFp0RSvv
+
 # Reference documentation http://backstage.io/docs/features/techdocs/configuration
 # Note: After experimenting with basic setup, use CI/CD to generate docs
 # and an external cloud storage when deploying TechDocs for production use-case.
@@ -69,16 +74,13 @@ techdocs:
 
 auth:
   # see https://backstage.io/docs/auth/ to learn about auth providers
-  environment:
-    name: development
-    providers:
-      oauth2:
-        development:
-          clientId: 5dknain9lvd5806l7f8v3kftpv
-          clientSecret: gb6dat5ndjot4nmr5mjqs9eitfktshq2ng4fdditoirqqsgf8g8
-          authorizationUrl: https://ltim-de-user-pool.auth.us-east-1.amazoncognito.com/oauth2/authorize
-          tokenUrl: https://ltim-de-user-pool.auth.us-east-1.amazoncognito.com/oauth2/token
-          callbackUrl: https://backstage.backs.de.ltim.net # Link of My Backstage workspace
+  environment: development
+  providers:
+    github:
+      development:
+        clientId: 6f2a674f890ab74cb3eb
+        clientSecret: 132a739d41605fe8cc5df6e383b24067ebc387cc
+      
 
 scaffolder:
   # see https://backstage.io/docs/features/software-templates/configuration for software template options
@@ -100,6 +102,19 @@ catalog:
       rules:
         - allow: [Template]
 
+    - type: file
+      target: ../../examples/template/S3Template.yaml
+      rules:
+        - allow: [Template]
+
+    # Local Harness CI/CD Template template
+    #- type: file
+      #target: ../../examples/template/HarnessCICDTemplate.yaml
+      #rules:
+        #- allow: [Template]
+
+    # Local Harness CI/CD Template template
+
     # Local example organizational data
     - type: file
       target: ../../examples/org.yaml
@@ -115,3 +130,54 @@ catalog:
     #   target: https://github.com/backstage/backstage/blob/master/packages/catalog-model/examples/acme-corp.yaml
     #   rules:
     #     - allow: [User, Group]
+# Cost Insight Parameters
+costInsights:
+  engineerCost: 200000
+  engineerThreshold: 0.5
+  products:
+    computeEngine:
+      name: Compute Engine
+      icon: compute
+    cloudDataflow:
+      name: Cloud Dataflow
+      icon: data
+    cloudStorage:
+      name: Cloud Storage
+      icon: storage
+    bigQuery:
+      name: BigQuery
+      icon: search
+    events:
+      name: Events
+      icon: data
+  metrics:
+    DAU:
+      name: Daily Active Users
+      default: true
+    MSC:
+      name: Monthly Subscribers
+  currencies:
+    engineers:
+      label: 'Engineers 🛠'
+      unit: 'engineer'
+    usd:
+      label: 'US Dollars 💵'
+      kind: 'USD'
+      unit: 'dollar'
+      prefix: '$'
+      rate: 1
+    carbonOffsetTons:
+      label: 'Carbon Offset Tons ♻️⚖️s'
+      kind: 'CARBON_OFFSET_TONS'
+      unit: 'carbon offset ton'
+      rate: 3.5
+    beers:
+      label: 'Beers 🍺'
+      kind: 'BEERS'
+      unit: 'beer'
+      rate: 4.5
+    pintsIceCream:
+      label: 'Pints of Ice Cream 🍦'
+      kind: 'PINTS_OF_ICE_CREAM'
+      unit: 'ice cream pint'
+      rate: 5.5
