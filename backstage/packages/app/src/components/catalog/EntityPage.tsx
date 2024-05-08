@@ -1,8 +1,4 @@
 import React from 'react';
-import {
-  isHarnessCiCdAvailable,
-  EntityHarnessCiCdContent,
-} from '@harnessio/backstage-plugin-ci-cd';
 import { Button, Grid } from '@material-ui/core';
 import {
   EntityApiDefinitionCard,
@@ -64,6 +60,10 @@ import { EntityVaultCard } from '@backstage/plugin-vault';
 
 import { TechDocsAddons } from '@backstage/plugin-techdocs-react';
 import { ReportIssue } from '@backstage/plugin-techdocs-module-addons-contrib';
+import {
+  isHarnessCiCdAvailable,
+  EntityHarnessCiCdContent,
+} from '@harnessio/backstage-plugin-ci-cd';
 
 const techdocsContent = (
   <EntityTechdocsContent>
