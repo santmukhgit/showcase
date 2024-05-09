@@ -68,9 +68,8 @@ techdocs:
 
 auth:
   # see https://backstage.io/docs/auth/ to learn about auth providers
-  environment:
-    name: development
-    providers:
+  environment: development
+  providers:
       oauth2:
         development:
           clientId: 5dknain9lvd5806l7f8v3kftpv
