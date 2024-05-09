@@ -53,8 +53,9 @@ proxy:
   '/harness/prod':
     target: 'https://app.harness.io/'
     headers:
-      'x-api-key': pat.-Sey-zxTQR-W6TCw2Ud0Kw.6639cdc69c1cc14edf9bae9b.CoydNCsjdV3XaFtJxNDL
+      'x-api-key': pat.-Sey-zxTQR-W6TCw2Ud0Kw.663cb74e6b7da273c93ab558.HK6GRFQE3OF45VnAw36L
       
+            
 # Reference documentation http://backstage.io/docs/features/techdocs/configuration
 # Note: After experimenting with basic setup, use CI/CD to generate docs
 # and an external cloud storage when deploying TechDocs for production use-case.
