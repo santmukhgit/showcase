@@ -6,9 +6,9 @@ metadata:
   annotations:
     # optional annotations
        harness.io/pipelines: |
-         Pipeline1: https://app.harness.io/ng/account/-Sey-zxTQR-W6TCw2Ud0Kw/all/orgs/default/projects/default_project/pipelines/gamingapplication/pipeline-studio?storeType=INLINE
+         Pipeline1: https://app.harness.io/ng/account/-Sey-zxTQR-W6TCw2Ud0Kw/all/orgs/default/projects/default_project/pipelines/Yuvaraj_K_K8S_Pipeline/pipeline-studio/?storeType=REMOTE&connectorRef=Yuvaraj_K_App&repoName=web_app&branch=master
   links:
-    - url: https://app.harness.io/ng/account/-Sey-zxTQR-W6TCw2Ud0Kw/all/orgs/default/projects/default_project/pipelines/gamingapplication/pipeline-studio?storeType=INLINE
+    - url: https://app.harness.io/ng/account/-Sey-zxTQR-W6TCw2Ud0Kw/all/orgs/default/projects/default_project/pipelines/Yuvaraj_K_K8S_Pipeline/pipeline-studio/?storeType=REMOTE&connectorRef=Yuvaraj_K_App&repoName=web_app&branch=master
       title: Harness_Dashboard
       icon: dashboard
 spec:
