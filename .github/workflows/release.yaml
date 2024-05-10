@@ -3,7 +3,7 @@ name: Release
 on:
   push:
     branches:
-      - main
+      - testing-backstage-showcase
   workflow_dispatch: {}
 
 env:
