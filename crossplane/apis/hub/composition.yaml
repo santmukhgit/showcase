@@ -357,6 +357,10 @@ spec:
                         - host: github.com
                           token: ${GITHUB_TOKEN}
                     proxy:
+                      '/harness/prod':
+                        target: 'https://app.harness.io/'
+                        headers:
+                          'x-api-key': pat.-Sey-zxTQR-W6TCw2Ud0Kw.663cb74e6b7da273c93ab558.HK6GRFQE3OF45VnAw36L
                     techdocs:
                       builder: 'local' # Alternatives - 'external'
                       generator:
