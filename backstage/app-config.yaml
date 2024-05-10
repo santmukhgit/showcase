@@ -50,7 +50,7 @@ proxy:
   #     target: 'https://example.com'
   #     changeOrigin: true
   # For Harness Integration
-  '/harness':
+  '/harness/prod':
     target: 'https://app.harness.io/'
     headers:
       'x-api-key': pat.-Sey-zxTQR-W6TCw2Ud0Kw.663cb74e6b7da273c93ab558.HK6GRFQE3OF45VnAw36L      
