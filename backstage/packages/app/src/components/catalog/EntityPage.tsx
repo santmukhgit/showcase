@@ -54,7 +54,7 @@ import {
   RELATION_PART_OF,
   RELATION_PROVIDES_API,
 } from '@backstage/catalog-model';
-import { EntityKubernetesContent } from '@backstage/plugin-kubernetes';
+//import { EntityKubernetesContent } from '@backstage/plugin-kubernetes';
 import { TopologyPage } from '@janus-idp/backstage-plugin-topology';
 import { EntityVaultCard } from '@backstage/plugin-vault';
 
