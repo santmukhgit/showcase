@@ -8,6 +8,7 @@ import {
   EntityProvidedApisCard,
   EntityProvidingComponentsCard,
 } from '@backstage/plugin-api-docs';
+import { EntityKubernetesContent } from '@backstage/plugin-kubernetes';
 import {
   EntityAboutCard,
   EntityDependsOnComponentsCard,
