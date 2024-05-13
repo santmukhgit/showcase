@@ -3173,7 +3173,7 @@
     "@backstage/plugin-catalog-common" "^1.0.17"
     "@backstage/types" "^1.1.1"
 
-"@backstage/plugin-catalog-react@^1.2.1":
+"@backstage/plugin-catalog-react@^1.11.3", "@backstage/plugin-catalog-react@^1.2.1":
   version "1.11.3"
   resolved "https://registry.yarnpkg.com/@backstage/plugin-catalog-react/-/plugin-catalog-react-1.11.3.tgz#e83948f3c921791066499d30ef487a9f4ce5964b"
   integrity sha512-WJPLLhYrRh6zPQ/lr1Lub+q8I7dd/kOfVklVxl3FmAK3Ad6z3IdK3Z7RrzUEHc2WVIE57bjnepEtBSSM9Xum/g==
@@ -3367,6 +3367,19 @@
     lodash "^4.17.21"
     luxon "^3.0.0"
 
+"@backstage/plugin-kubernetes-common@^0.7.5":
+  version "0.7.5"
+  resolved "https://registry.yarnpkg.com/@backstage/plugin-kubernetes-common/-/plugin-kubernetes-common-0.7.5.tgz#0c0324a3f1fff68aa78d8ea33aa0d74a28367adb"
+  integrity sha512-6pCJsF/SEAiQM8U6XXC0lK86Wgb62J4iDeIOuF1xuVwQy4VvbH+CTyDl96gXtiDi5/IvEN2ov50KCgIambTAGg==
+  dependencies:
+    "@backstage/catalog-model" "^1.4.5"
+    "@backstage/plugin-permission-common" "^0.7.13"
+    "@backstage/types" "^1.1.1"
+    "@kubernetes/client-node" "0.20.0"
+    kubernetes-models "^4.3.1"
+    lodash "^4.17.21"
+    luxon "^3.0.0"
+
 "@backstage/plugin-kubernetes-node@^0.1.0":
   version "0.1.0"
   resolved "https://registry.yarnpkg.com/@backstage/plugin-kubernetes-node/-/plugin-kubernetes-node-0.1.0.tgz#675e972abc12dffff3dfb5fc0b0ba52474622c48"
@@ -3394,6 +3407,34 @@
     "@material-ui/icons" "^4.11.3"
     "@material-ui/lab" "^4.0.0-alpha.61"
     "@types/react" "^16.13.1 || ^17.0.0"
+    cronstrue "^2.32.0"
+    js-yaml "^4.1.0"
+    kubernetes-models "^4.3.1"
+    lodash "^4.17.21"
+    luxon "^3.0.0"
+    react-use "^17.4.0"
+    xterm "^5.3.0"
+    xterm-addon-attach "^0.9.0"
+    xterm-addon-fit "^0.8.0"
+
+"@backstage/plugin-kubernetes-react@^0.3.4":
+  version "0.3.4"
+  resolved "https://registry.yarnpkg.com/@backstage/plugin-kubernetes-react/-/plugin-kubernetes-react-0.3.4.tgz#0862d70a99079a3e229c21a5bd696b4729206d1c"
+  integrity sha512-PKulIsh7mz9Ra9xunHGj9HjJ02GC511QczNgT905JJRE2eXPzSQKnn2Pp16gAy33kGU6qfDbBf/v3FkwAxn5rg==
+  dependencies:
+    "@backstage/catalog-model" "^1.4.5"
+    "@backstage/core-components" "^0.14.4"
+    "@backstage/core-plugin-api" "^1.9.2"
+    "@backstage/errors" "^1.2.4"
+    "@backstage/plugin-kubernetes-common" "^0.7.5"
+    "@backstage/types" "^1.1.1"
+    "@kubernetes-models/apimachinery" "^1.1.0"
+    "@kubernetes-models/base" "^4.0.1"
+    "@kubernetes/client-node" "^0.20.0"
+    "@material-ui/core" "^4.9.13"
+    "@material-ui/icons" "^4.11.3"
+    "@material-ui/lab" "^4.0.0-alpha.61"
+    "@types/react" "^16.13.1 || ^17.0.0 || ^18.0.0"
     cronstrue "^2.32.0"
     js-yaml "^4.1.0"
     kubernetes-models "^4.3.1"
@@ -3432,6 +3473,31 @@
     lodash "^4.17.21"
     luxon "^3.0.0"
     react-use "^17.2.4"
+    xterm "^5.2.1"
+    xterm-addon-attach "^0.9.0"
+    xterm-addon-fit "^0.8.0"
+
+"@backstage/plugin-kubernetes@^0.11.9":
+  version "0.11.9"
+  resolved "https://registry.yarnpkg.com/@backstage/plugin-kubernetes/-/plugin-kubernetes-0.11.9.tgz#52faffbb886627baa9f47e6d697aaf2b2b4a4647"
+  integrity sha512-mH36NXQ2+usTGDAo3RxeB1rG6YeaT2A8kWrJpJ75gQg8ChUMnhcF2a6dvZnNDMytl1KNiha8YSMapOwR1G5BiQ==
+  dependencies:
+    "@backstage/catalog-model" "^1.4.5"
+    "@backstage/core-components" "^0.14.4"
+    "@backstage/core-plugin-api" "^1.9.2"
+    "@backstage/plugin-catalog-react" "^1.11.3"
+    "@backstage/plugin-kubernetes-common" "^0.7.5"
+    "@backstage/plugin-kubernetes-react" "^0.3.4"
+    "@kubernetes-models/apimachinery" "^1.1.0"
+    "@kubernetes-models/base" "^4.0.1"
+    "@kubernetes/client-node" "0.20.0"
+    "@material-ui/core" "^4.12.2"
+    "@types/react" "^16.13.1 || ^17.0.0 || ^18.0.0"
+    cronstrue "^2.2.0"
+    js-yaml "^4.0.0"
+    kubernetes-models "^4.1.0"
+    lodash "^4.17.21"
+    luxon "^3.0.0"
     xterm "^5.2.1"
     xterm-addon-attach "^0.9.0"
     xterm-addon-fit "^0.8.0"
@@ -5516,7 +5582,7 @@
   optionalDependencies:
     openid-client "^5.3.0"
 
-"@kubernetes/client-node@0.20.0":
+"@kubernetes/client-node@0.20.0", "@kubernetes/client-node@^0.20.0":
   version "0.20.0"
   resolved "https://registry.yarnpkg.com/@kubernetes/client-node/-/client-node-0.20.0.tgz#4447ae27fd6eef3d4830a5a039f3b84ffd5c5913"
   integrity sha512-xxlv5GLX4FVR/dDKEsmi4SPeuB49aRc35stndyxcC73XnUEEwF39vXbROpHOirmDse8WE9vxOjABnSVS+jb7EA==
@@ -9659,6 +9725,7 @@ anymatch@^3.0.3, anymatch@~3.1.2:
     "@backstage/plugin-user-settings" "^0.7.11"
     "@backstage/plugin-vault" "^0.1.20"
     "@backstage/theme" "^0.4.3"
+    "@harnessio/backstage-plugin-ci-cd" "^0.6.0"
     "@janus-idp/backstage-plugin-topology" "^1.15.9"
     "@material-ui/core" "^4.12.2"
     "@material-ui/icons" "^4.9.1"
