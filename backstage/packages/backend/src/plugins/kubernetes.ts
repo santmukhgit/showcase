@@ -1,4 +1,4 @@
-import { ClusterDetails, 
+/*import { ClusterDetails, 
          KubernetesBuilder,
          KubernetesClustersSupplier, } from '@backstage/plugin-kubernetes-backend';
 import { Router } from 'express';
@@ -17,4 +17,4 @@ export default async function createPlugin(
     permissions: env.permissions,
   }).build();
   return router;
-} 
+} */

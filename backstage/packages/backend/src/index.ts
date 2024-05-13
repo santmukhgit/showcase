@@ -31,7 +31,7 @@ import search from './plugins/search';
 import { PluginEnvironment } from './types';
 import { ServerPermissionClient } from '@backstage/plugin-permission-node';
 import { DefaultIdentityClient } from '@backstage/plugin-auth-node';
-import kubernetes from './plugins/kubernetes';
+//import kubernetes from './plugins/kubernetes';
 import vault from './plugins/vault';
 
 function makeCreateEnv(config: Config) {
@@ -101,9 +101,9 @@ async function main() {
   apiRouter.use('/vault', await vault(vaultEnv));
 
 // Added for Kubernetes backend
-  const backend = createBackend();
-  backend.add(import('@backstage/plugin-kubernetes-backend/alpha'));
-  backend.start();
+ // const backend = createBackend();
+ // backend.add(import('@backstage/plugin-kubernetes-backend/alpha'));
+ // backend.start();
   
   // Add backends ABOVE this line; this 404 handler is the catch-all fallback
   apiRouter.use(notFoundHandler());
