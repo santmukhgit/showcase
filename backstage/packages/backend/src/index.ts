@@ -100,6 +100,11 @@ async function main() {
   apiRouter.use('/kubernetes', await kubernetes(kubernetesEnv));
   apiRouter.use('/vault', await vault(vaultEnv));
 
+// Added for Kubernetes backend
+  const backend = createBackend();
+  backend.add(import('@backstage/plugin-kubernetes-backend/alpha'));
+  backend.start();
+  
   // Add backends ABOVE this line; this 404 handler is the catch-all fallback
   apiRouter.use(notFoundHandler());
 
