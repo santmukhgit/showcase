@@ -6,8 +6,8 @@ metadata:
   # Example for optional annotations
   annotations:
    #  github.com/project-slug: backstage/backstage
-     backstage.io/techdocs-ref: dir:.
-     backstage.io/kubernetes-id: kubernetes
+   # backstage.io/techdocs-ref: dir:.
+     backstage.io/kubernetes-id: backstage
      backstage.io/kubernetes-namespace: default
    # backstage.io/techdocs-ref: dir:.
        harness.io/pipelines: |
