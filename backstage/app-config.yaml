@@ -14,7 +14,7 @@ kubernetes:
       clusters: 
         - url: https://backstackaks-dns-pzjuubhi.hcp.eastus.azmk8s.io:443
           name: backstackAKS
-          authProvider: backstage
+          authProvider: 
           skipTLSVerify: false
           skipMetricsLookup: true
           serviceAccountToken: Nbr8Q~sOsbA7TB5G66o8W0uINJcLSiHd5Cnbdbfb
