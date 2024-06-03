@@ -368,7 +368,16 @@ spec:
                       publisher:
                         type: 'local' # Alternatives - 'googleGcs' or 'awsS3'. Read documentation for using alternatives.
                     auth:
-                      providers: {}
+                      providers: 
+                        microsoft:
+                          development:
+                            client_id: b752d2c0-f012-45c1-ae94-f88fdc4cabf6
+                            client_secret: Nbr8Q~sOsbA7TB5G66o8W0uINJcLSiHd5Cnbdbfb
+                            tenant_id: ff355289-721e-4dd7-a663-afec62ab9d54
+                            subscription_id: dbc53267-e13a-403c-9a0d-976e4f04debe
+                            resourceGroup: DE-Lab-EastUS
+                            clusterName: backstackAKS
+                      #region: 'East US' 
                     scaffolder:
                     catalog:
                       import:
@@ -391,7 +400,7 @@ spec:
                           clusters:
                             - url: https://backstackaks-dns-pzjuubhi.hcp.eastus.azmk8s.io:443
                               name: backstackAKS
-                              authProvider: 'aks'
+                              authProvider: aks
                               serviceAccountToken: yzs715pyvt5bzypyegbzgzm8o6svm01j4ekc5v538unzhgwxb2ygfxz1kf0qahsa6g07camj2xz2sywdaz34dob8jtrd0hk6gf0cfpst6un8iu4jaju3a3lqnt0ya60x
                               dashboardUrl: https://portal.azure.com/#resource/subscriptions/dbc53267-e13a-403c-9a0d-976e4f04debe/resourceGroups/DE-Lab-EastUS/providers/Microsoft.ContainerService/managedClusters/backstackAKS/workloads
                               dashboardApp: standard
@@ -405,14 +414,6 @@ spec:
                       secretEngine: secret
                       kvVersion: "2"
 
-                    aks:
-                      client_id: b752d2c0-f012-45c1-ae94-f88fdc4cabf6
-                      client_secret: Nbr8Q~sOsbA7TB5G66o8W0uINJcLSiHd5Cnbdbfb
-                      tenant_id: ff355289-721e-4dd7-a663-afec62ab9d54
-                      subscription_id: dbc53267-e13a-403c-9a0d-976e4f04debe
-                      resourceGroup: DE-Lab-EastUS
-                      clusterName: backstackAKS
-                      region: 'East US' 
         patches:
         - type: PatchSet
           patchSetName: target-cluster

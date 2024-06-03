@@ -25,14 +25,18 @@ kubernetes:
             #- group: 'argoproj.io'
               #apiVersion: 'v1alpha1'
               #plural: 'rollouts' 
-aks:
-  client_id: b752d2c0-f012-45c1-ae94-f88fdc4cabf6
-  client_secret: Nbr8Q~sOsbA7TB5G66o8W0uINJcLSiHd5Cnbdbfb
-  tenant_id: ff355289-721e-4dd7-a663-afec62ab9d54
-  subscription_id: dbc53267-e13a-403c-9a0d-976e4f04debe
-  resourceGroup: DE-Lab-EastUS
-  clusterName: backstackAKS
-  region: 'East US' 
+auth:
+  environment: development
+  providers: 
+    microsoft:
+      development:
+        client_id: b752d2c0-f012-45c1-ae94-f88fdc4cabf6
+        client_secret: Nbr8Q~sOsbA7TB5G66o8W0uINJcLSiHd5Cnbdbfb
+        tenant_id: ff355289-721e-4dd7-a663-afec62ab9d54
+        subscription_id: dbc53267-e13a-403c-9a0d-976e4f04debe
+        resourceGroup: DE-Lab-EastUS
+        clusterName: backstackAKS
+  #region: 'East US' 
 
 backend:
   # Used for enabling authentication, secret is shared by all backend plugins
