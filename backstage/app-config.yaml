@@ -1,9 +1,11 @@
 app:
-  title: Scaffolded Backstage App
+  # monkmantra - changed application title
+  title: LTIMindtree IDP
   baseUrl: http://localhost:3000
 
 organization:
-  name: The BACK Stack
+  # monkmantra - changed org name
+  name: LTIMindtree
 backend:
   # Used for enabling authentication, secret is shared by all backend plugins
   # See https://backstage.io/docs/auth/service-to-service-auth for
