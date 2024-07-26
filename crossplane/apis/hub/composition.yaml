@@ -337,9 +337,9 @@ spec:
                   - backstage
                   appConfig:
                     app:
-                      title: BACK Stack IDP
+                      title: LTIMindtree IDP # BACK Stack IDP
                     organization:
-                      name: BACK Stack
+                      name: LTIMindtree # BACK Stack -- Changed the name to LTIMindtree
                     backend:
                       listen:
                         port: 7007

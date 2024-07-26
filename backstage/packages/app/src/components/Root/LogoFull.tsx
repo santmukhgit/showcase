@@ -8,7 +8,7 @@ import { makeStyles } from '@material-ui/core';
 const useStyles = makeStyles({
   svg: {
     width: 'auto',
-    height: 30,
+    height: 50,
   },
   path: {
     fill: '#7df3e1',
