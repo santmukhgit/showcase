@@ -1,0 +1,12 @@
+site_name: "FastAPI Application CICD Template"
+site_description: "This is simple FastAPI application created using Uvicorn framework."
+
+nav:
+  - Introduction: index.md
+  - FastAPI Application: fastapi/readme.md
+
+plugins:
+  - techdocs-core
+
+theme:
+  name: material
