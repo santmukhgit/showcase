@@ -1,7 +1,7 @@
 apiVersion: scaffolder.backstage.io/v1beta3
 kind: Template
 metadata:
-  name: python-fastapi-service-gcr-spanner
+  name: python-fastapi-service
   title: Python FastAPI Service
   description: Create a Python FastAPI service
   annotations:
@@ -56,40 +56,40 @@ spec:
           ui:options:
             rows: 3
 
-    - title: Infrastructure details
-      required:
-        - project_id
-      properties:
-        project_id:
-          title: Project ID
-          type: string
-          description: ID of an existing project 
-          ui:autofocus: true
-          ui:options:
-            rows: 3
-        resourceUserGroup:
-          title: Resource User Group
-          type: string
-          description: Members of this Genie group will have access to all the resources being provisioned (repo, pipelines, infrastructure)
-          ui:options:
-            rows: 3
-        resourceAdminGroup:
-          title: Resource Admin Group
-          type: string
-          description: Members of this Genie group will have administrative access to the resources being provisioned
-          ui:options:
-            rows: 3
+    # - title: Infrastructure details
+    #   required:
+    #     - project_id
+    #   properties:
+    #     project_id:
+    #       title: Project ID
+    #       type: string
+    #       description: ID of an existing project 
+    #       ui:autofocus: true
+    #       ui:options:
+    #         rows: 3
+    #     resourceUserGroup:
+    #       title: Resource User Group
+    #       type: string
+    #       description: Members of this Genie group will have access to all the resources being provisioned (repo, pipelines, infrastructure)
+    #       ui:options:
+    #         rows: 3
+    #     resourceAdminGroup:
+    #       title: Resource Admin Group
+    #       type: string
+    #       description: Members of this Genie group will have administrative access to the resources being provisioned
+    #       ui:options:
+    #         rows: 3
 
-    - title: Database details
-      required:
-        - databaseName
-      properties:
-        databaseName:
-          title: Database Name
-          type: string
-          description: Name of the database
-          ui:options:
-            rows: 3
+    # - title: Database details
+    #   required:
+    #     - databaseName
+    #   properties:
+    #     databaseName:
+    #       title: Database Name
+    #       type: string
+    #       description: Name of the database
+    #       ui:options:
+    #         rows: 3
 
   steps:
     - id: fetch-base-app
@@ -99,10 +99,8 @@ spec:
         url: https://github.com/santmukhgit/jinaldesailive_fastapi-azure-template/tree/main/fast-api-skeleton/content
         targetPath: ./app-${{ parameters.app_name }}
         values:
-          project_id: ${{ parameters.project_id }}
           app_name: ${{ parameters.app_name }}
           description: ${{ parameters.description }}
-          db_name: ${{ parameters.databaseName }}
 
     - id: publish-app
       name: Publish Application
@@ -110,7 +108,7 @@ spec:
       input:
         allowedHosts: ['github.com']
         defaultBranch: main
-        description: This is Python FastAPI app ${{ parameters.app_name }} in project ${{ parameters.project_id }}
+        description: This is Python FastAPI app ${{ parameters.app_name }}
         repoUrl: github.com?owner=santmukhgit&repo=app-${{ parameters.app_name }}
         repoVisibility: public
         protectDefaultBranch: false
