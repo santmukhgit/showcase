@@ -1,6 +1,10 @@
 import React, { PropsWithChildren } from 'react';
 import { makeStyles } from '@material-ui/core';
-import HomeIcon from '@material-ui/icons/Home';
+// import HomeIcon from '@material-ui/icons/Home';
+/**
+* monkmantra - CategoryIcon added below
+*/
+import CategoryIcon from '@material-ui/icons/Category';
 import ExtensionIcon from '@material-ui/icons/Extension';
 import MapIcon from '@material-ui/icons/MyLocation';
 import LibraryBooks from '@material-ui/icons/LibraryBooks';
@@ -29,7 +33,8 @@ import SearchIcon from '@material-ui/icons/Search';
 
 const useSidebarLogoStyles = makeStyles({
   root: {
-    width: sidebarConfig.drawerWidthClosed,
+    // width: sidebarConfig.drawerWidthClosed,
+    width: 180, // monkmantra - changed width
     height: 3 * sidebarConfig.logoHeight,
     display: 'flex',
     flexFlow: 'row nowrap',
@@ -37,7 +42,8 @@ const useSidebarLogoStyles = makeStyles({
     marginBottom: -14,
   },
   link: {
-    width: sidebarConfig.drawerWidthClosed,
+    // width: sidebarConfig.drawerWidthClosed,
+    width: 'auto', // monkmantra - changed width
     marginLeft: 24,
   },
 });
@@ -65,10 +71,11 @@ export const Root = ({ children }: PropsWithChildren<{}>) => (
       <SidebarDivider />
       <SidebarGroup label="Menu" icon={<MenuIcon />}>
         {/* Global nav, not org-specific */}
-        <SidebarItem icon={HomeIcon} to="catalog" text="Home" />
+        {/* monkmantra - modified order and text */}
+        <SidebarItem icon={CategoryIcon} to="catalog" text="Catalog" />
+        <SidebarItem icon={CreateComponentIcon} to="create" text="Blueprints" />
         <SidebarItem icon={ExtensionIcon} to="api-docs" text="APIs" />
         <SidebarItem icon={LibraryBooks} to="docs" text="Docs" />
-        <SidebarItem icon={CreateComponentIcon} to="create" text="Create..." />
         {/* End global nav */}
         <SidebarDivider />
         <SidebarScrollWrapper>
