@@ -8,6 +8,7 @@ spec:
     - ./templates/cluster/eks/template.yaml
     - ./templates/cluster/aks/template.yaml
     - ./templates/application/template.yaml
+    - ./templates/application/template1.yaml
     - ./templates/cluster/deks/template.yaml
     - ./templates/cluster/daks/template.yaml
     - ./templates/fastapi-application/template.yaml
