@@ -6,8 +6,8 @@ metadata:
   title: Application Onboarding
   description: Helps to onboard the application
 spec:
-  owner: user:guest
-  type: service
+  owner: infrastructure
+  type: component
 
   # These parameters are used to generate the input form in the frontend, and are
   # used to gather input data for the execution of the template.
