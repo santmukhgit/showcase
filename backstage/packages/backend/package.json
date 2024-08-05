@@ -35,7 +35,6 @@
     "@backstage/plugin-search-backend-node": "^1.2.10",
     "@backstage/plugin-techdocs-backend": "^1.8.0",
     "@backstage/plugin-vault-backend": "^0.3.11",
-    "@internal/backstage-plugin-scaffolder-backend-module-trigger-harness-pipelines": "0.1.0",
     "app": "link:../app",
     "better-sqlite3": "^8.0.0",
     "dockerode": "^3.3.1",

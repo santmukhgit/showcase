@@ -10,7 +10,6 @@ spec:
     - ./templates/application/template.yaml
     - ./templates/cluster/deks/template.yaml
     - ./templates/cluster/daks/template.yaml
-    - ./templates/application-onboarding/template.yaml
     - ./templates/fastapi-application/template.yaml
     - https://github.com/backstage/software-templates/blob/main/scaffolder-templates/clean-architecture-app/template.yaml
     - https://github.com/backstage/software-templates/blob/main/scaffolder-templates/create-react-app/template.yaml

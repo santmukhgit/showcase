@@ -1,1 +1,0 @@
-export { createHarnessTriggerAction } from './harness';
